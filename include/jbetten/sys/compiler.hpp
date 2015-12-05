@@ -7,19 +7,19 @@
 
 namespace jbetten {
 
-    static inline constexpr bool unlikely(bool x) {
+    static inline bool unlikely(bool x) {
         return __builtin_expect(x, 0);
     }
 
-    static inline constexpr bool likely(bool x) {
+    static inline bool likely(bool x) {
         return __builtin_expect(x, 1);
     }
 
-    static inline constexpr void prefetch(void *p) {
+    static inline void prefetch(void *p) {
         __builtin_prefetch(p, 0, 3);
     }
 
-    static inline constexpr void writehint(void *p) {
+    static inline void writehint(void *p) {
         __builtin_prefetch(p, 1, 3);
     }
 

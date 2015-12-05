@@ -47,7 +47,7 @@ namespace jbetten {
 
             TInternalNode()
                     : n(0) { }
-        } __attribute__ ((packed()));
+        };
 
         template<std::size_t L>
         struct TLeafNode {
@@ -58,7 +58,7 @@ namespace jbetten {
 
             TLeafNode()
                     : n(0) { }
-        } __attribute__ ((packed()));
+        };
 
         template<template<std::size_t> class Node, std::size_t N = 1,
                 bool valid = sizeof(Node<N>) <= BlockSize>
@@ -152,17 +152,17 @@ namespace jbetten {
                 auto newRoot = allocator->template allocate<InternalNode>().second;
                 newRoot->nodes[0] = allocator->get(oldRoot);
                 if (0 == depth) {
-                    splitChild<LeafNode>(newRoot, 0, oldRoot);
+                    splitChild<LeafNode>(newRoot, 0, *reinterpret_cast<LeafNode *>(oldRoot));
                 } else {
-                    splitChild<InternalNode>(newRoot, 0, oldRoot);
+                    splitChild<InternalNode>(newRoot, 0, *reinterpret_cast<InternalNode *>(oldRoot));
                 }
                 ++depth;
             }
 
             if (0 == depth) {
-                insertNonFull(reinterpret_cast<LeafNode *>(root), element);
+                insertNonFull(reinterpret_cast<LeafNode *>(root), std::forward(element));
             } else {
-                insertNonFull(reinterpret_cast<InternalNode *>(root), element, 0);
+                insertNonFull(reinterpret_cast<InternalNode *>(root), std::forward(element), 0);
             }
         }
 
