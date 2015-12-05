@@ -18,6 +18,7 @@
     <orderEntry type="module-library">
       <library name="Header Search Paths">
         <CLASSES>
+          <root url="file://$MODULE_DIR$/include" />
           <root url="file://$MODULE_DIR$/test/lib/googletest/googlemock" />
           <root url="file://$MODULE_DIR$/test/lib/googletest/googletest" />
           <root url="file:///usr/include" />
@@ -27,6 +28,7 @@
           <root url="file:///usr/local/include" />
         </CLASSES>
         <SOURCES>
+          <root url="file://$MODULE_DIR$/include" />
           <root url="file://$MODULE_DIR$/test/lib/googletest/googlemock" />
           <root url="file://$MODULE_DIR$/test/lib/googletest/googletest" />
           <root url="file:///usr/include" />
