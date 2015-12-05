@@ -1,3 +1,4 @@
 cmake_minimum_required(VERSION 3.0)
 project(DataStructures)
 
+add_subdirectory(test)
