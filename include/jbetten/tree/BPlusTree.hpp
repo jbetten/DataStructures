@@ -6,6 +6,7 @@
 #define DATASTRUCTURES_BPLUSTREE_HPP
 
 #include <algorithm>
+#include <array>
 #include <memory>
 #include <utility>
 
