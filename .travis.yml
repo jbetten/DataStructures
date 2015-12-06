@@ -1,10 +1,12 @@
 addons:
     apt:
         sources:
+            - llvm-toolchain-precise
             - llvm-toolchain-precise-3.7
             - ubuntu-toolchain-r-test
         packages:
             - clang-3.7
+            - libc++1
             - libc++-dev
             - g++-5
             - gcc-5
