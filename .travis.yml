@@ -1,0 +1,8 @@
+language: cpp
+compiler:
+  - gcc
+  - clang
+
+script:
+  - cmake -D CMAKE_CXX_COMPILER=$CXX .
+  - ./test/runUnitTests
