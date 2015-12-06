@@ -1,7 +1,7 @@
 addons:
     apt:
         sources:
-            - llvm-toolchain-precise
+            - llvm-toolchain-precise-3.7
             - ubuntu-toolchain-r-test
         packages:
             - clang-3.7
@@ -10,7 +10,7 @@ addons:
 
 install:
     - if [ "$CXX" = "g++" ]; then export CXX="g++-5" CC="gcc-5"; fi
-    - if [ "$CXX" = "clang++" ]; then export CXX="clang-3.7" CC="clang-3.7"; fi
+    - if [ "$CXX" = "clang++" ]; then export CXX="clang++-3.7" CC="clang-3.7"; fi
 
 language: cpp
 compiler:
