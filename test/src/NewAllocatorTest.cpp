@@ -2,6 +2,8 @@
 // Created by jbetten on 12/5/15.
 //
 
+#include <functional>
+
 #include <gtest/gtest.h>
 
 #include <jbetten/allocator/NewAllocator.hpp>
