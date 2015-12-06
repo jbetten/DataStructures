@@ -178,7 +178,7 @@ namespace jbetten {
         explicit BPlusTree(std::shared_ptr<Allocator> alloc)
                 : allocator(alloc),
                   depth(0),
-                  root((allocator->template allocate<LeafNode>()).second) { }
+                  root((std::get<1>(allocator->template allocate<LeafNode>()))) { }
 
     private:
 
