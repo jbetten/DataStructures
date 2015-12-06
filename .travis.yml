@@ -22,7 +22,7 @@ compiler:
 
 before_script:
     - cmake -version
-    - $CXX -version
+    - $CXX --version
 
 script:
     - cmake -D CMAKE_CXX_COMPILER=$CXX . && VERBOSE=1 make && ./test/runUnitTests
