@@ -5,4 +5,5 @@ compiler:
 
 script:
   - cmake -D CMAKE_CXX_COMPILER=$CXX .
+  - make
   - ./test/runUnitTests
